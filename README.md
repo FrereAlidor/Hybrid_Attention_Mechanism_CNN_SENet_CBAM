@@ -38,23 +38,21 @@ We propose a **hybrid architecture** that integrates SENet's squeeze-excitation 
 
 **The following visualizations show how the hybrid attention model better focuses on the discriminative regions compared to baseline models:**
 
-> Place your images here!  
-> Recommended order:
+![Map_Hybrid](https://github.com/user-attachments/assets/828458d0-99f1-44da-a532-f3ba402790b1)
 
-- **Image 1**: `/images/396759f1-76f3-4704-8170-209cdc5181c8.png`
-- **Image 2**: `/images/78743aff-c320-410f-902d-5c4bb650da94.png`
-- **Image 3**: `/images/cf161bd7-b13e-4274-9c1b-c218cc8862bc.png`
-- **Image 4**: `/images/ea37b7f6-caf4-4d56-b47a-f2df2e366052.png`
-- **Image 5**: `/images/824a5053-588d-4286-acc0-ab8d83369f84.png`
-- **Image 6**: `/images/ee148012-6f21-4d80-8b3b-6b0e97d3bbb8.png`
+![image](https://github.com/user-attachments/assets/bee7596d-e60b-46fa-9a3e-bc6654ce084d)
 
-```markdown
-![Grad-CAM Visualization 1](./images/396759f1-76f3-4704-8170-209cdc5181c8.png)
-![Grad-CAM Visualization 2](./images/78743aff-c320-410f-902d-5c4bb650da94.png)
-![Grad-CAM Visualization 3](./images/cf161bd7-b13e-4274-9c1b-c218cc8862bc.png)
-![Grad-CAM Visualization 4](./images/ea37b7f6-caf4-4d56-b47a-f2df2e366052.png)
-![Grad-CAM Visualization 5](./images/824a5053-588d-4286-acc0-ab8d83369f84.png)
-![Grad-CAM Visualization 6](./images/ee148012-6f21-4d80-8b3b-6b0e97d3bbb8.png)
+![CNN+SENet+BAM](https://github.com/user-attachments/assets/c04682c7-e44f-4e01-8c35-73384a7da6a0)
+
+
+![Loss_Acc_ResNetHybrid](https://github.com/user-attachments/assets/31387409-0697-4e6d-9803-454512ef9de1)
+![Loss_Acc_AlexNetBase](https://github.com/user-attachments/assets/a34c0373-5d98-4ff0-b971-263d08e44ce0)
+![Loss_Acc_Hybrid](https://github.com/user-attachments/assets/c3f9dd59-d0c5-414d-bf77-3220cfb30744)
+
+![output6](https://github.com/user-attachments/assets/fcaf8539-4047-4b5a-b7c4-eaad2a1b06fe)
+
+
+
 ```
 
 ---
