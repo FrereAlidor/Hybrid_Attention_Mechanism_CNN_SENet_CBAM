@@ -34,7 +34,7 @@ We propose a **hybrid architecture** that integrates SENet's squeeze-excitation 
 
 ---
 
-## 🔥 Visualizations (Grad-CAM)
+## 🔥 Visualizations Results
 
 **The following visualizations show how the hybrid attention model better focuses on the discriminative regions compared to baseline models:**
 
@@ -109,8 +109,11 @@ The Grad-CAM outputs will be saved in the `/images` folder.
 - Apply the hybrid model to **medical image analysis** and **autonomous driving** datasets.
 
 ---
+## 📬 Contact
+For any questions or collaborations, feel free to reach out:
 
-
+Email: alidormbayandjambe@gmail.com
+---
 
 ## 📜 License
 
