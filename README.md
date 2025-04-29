@@ -16,8 +16,8 @@ We propose a **hybrid architecture** that integrates SENet's squeeze-excitation 
 - **Enhanced Architectures**: Hybrid modules integrated into ResNet18, VGG16, AlexNet, and SqueezeNet.
 - **Significant Performance Gains**:
   - **ResNet18**: 81.22% → **90.71%**
-  - **SqueezeNet**: 71.91% → **78.29%** (+6.3%)
-  - **AlexNet**: 62.67% → **71.82%** (+12.5%)
+  - **SqueezeNet**: 71.91% → **78.29%** (+8.87%)
+  - **AlexNet**: 62.67% → **71.82%** (+14.6%)
 - **Faster Convergence**: 15% fewer epochs needed (40 vs. 50 epochs).
 - **Reduced Validation Loss**: 0.545 → **0.533** (ResNet18).
 - **Improved Interpretability**: 23% sharper Grad-CAM focus compared to individual attention mechanisms.
