@@ -184,24 +184,144 @@ Our approach outperforms previous SENet+CBAM combinations by an average of 2.32%
 ![output6](https://github.com/user-attachments/assets/fcaf8539-4047-4b5a-b7c4-eaad2a1b06fe)
 
 
-### Reproducibility
-- Fixed random seeds for consistent results
-- Standardized training protocol across all experiments  
-- Detailed hyperparameter documentation
-- Cross-validation for robust performance estimation
 
-## Limitations and Future Work
+Installation
+1. Clone Repository
+bashgit clone https://github.com/your-username/hybrid-attention-cnn.git
+cd hybrid-attention-cnn
+2. Create Virtual Environment (Recommended)
+bashpython -m venv venv
+source venv/bin/activate  # Linux/Mac
+# or
+venv\Scripts\activate  # Windows
+3. Install Dependencies
+bashpip install -r requirements.txt
+4. Verify Installation
+bashpython -c "import torch; print(f'PyTorch: {torch.__version__}')"
+python -c "import torchvision; print(f'TorchVision: {torchvision.__version__}')"
+Usage
+Option 1: Quick Start (Single Model)
+Train a single model configuration:
+bash# Train ResNet18 with Hybrid Attention (recommended for best results)
+python quick_start.py --backbone resnet18 --attention hybrid --epochs 50
 
-### Current Limitations
-- Evaluation limited to CIFAR-10 (32×32 resolution)
-- Focus on image classification tasks only
-- Testing restricted to traditional CNN architectures
+# Train VGG16 with CBAM only
+python quick_start.py --backbone vgg16 --attention cbam --epochs 50
 
-### Future Directions
-- Validation on higher-resolution datasets (ImageNet)
-- Extension to object detection and semantic segmentation
-- Integration with modern architectures (EfficientNet, ConvNeXt)
-- Development of learnable attention weighting mechanisms
+# Train AlexNet without attention (baseline)
+python quick_start.py --backbone alexnet --attention none --epochs 50
+
+# Train SqueezeNet with SENet only
+python quick_start.py --backbone squeezenet --attention senet --epochs 50
+Available Arguments:
+
+--backbone: resnet18, vgg16, alexnet, squeezenet
+--attention: none, senet, cbam, hybrid
+--epochs: Number of training epochs (default: 50)
+--batch_size: Batch size (default: 128)
+--lr: Learning rate (default: 0.003)
+--device: cuda or cpu (default: cuda)
+
+Option 2: Complete Experimental Pipeline
+Reproduce all paper results (trains 16 models):
+bashpython experiments/run_all_experiments.py
+This will:
+
+Train all 4 architectures with 4 attention configurations (16 models total)
+Generate comprehensive result tables
+Save all metrics to CSV files
+Create performance comparison plots
+
+Expected runtime: 8-12 hours on GPU, 40+ hours on CPU
+Option 3: Custom Training Script
+pythonfrom data.cifar10_loader import get_cifar10_loaders
+from models.hybrid_attention import create_model
+from utils.trainer import Trainer
+
+# Load data
+train_loader, val_loader, test_loader = get_cifar10_loaders(batch_size=128)
+
+# Create model
+model = create_model(backbone='resnet18', attention_type='hybrid')
+
+# Train
+trainer = Trainer(model, device='cuda')
+history = trainer.train(train_loader, val_loader, epochs=50)
+
+# Evaluate
+results = trainer.evaluate_metrics(test_loader)
+print(f"Test Accuracy: {results['accuracy']:.2f}%")
+Expected Results
+Classification Performance (CIFAR-10)
+ArchitectureBaseline+ HybridImprovementResNet1877.93%90.71%+12.78%VGG1655.78%70.17%+14.39%AlexNet62.67%71.82%+9.15%SqueezeNet71.91%78.29%+6.38%
+Computational Overhead
+ModelBaseline ParamsHybrid ParamsOverheadResNet1811.17M11.82M+5.8%VGG16138.36M142.45M+3.0%AlexNet61.10M62.03M+1.5%SqueezeNet1.25M1.32M+5.6%
+Output Files
+After running experiments, the following files are generated in results/:
+results/
+├── all_experiments.csv              # Complete results table
+├── classification_performance.csv   # Classification metrics
+├── validation_performance.csv       # Validation metrics
+├── [model]_[attention]_curves.png  # Training curves per model
+├── [model]_[attention]_model.pth   # Saved model weights
+├── comparative_performance.png      # Performance comparison plots
+├── performance_heatmap.png         # Results heatmap
+├── parameter_efficiency.png        # Efficiency analysis
+└── summary_report.txt              # Text summary report
+Troubleshooting
+CUDA Out of Memory
+bash# Reduce batch size
+python quick_start.py --batch_size 64
+
+# Or use CPU (slower)
+python quick_start.py --device cpu
+Missing Dependencies
+bash# Install specific package
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+
+# For FLOPs calculation
+pip install thop
+Data Download Issues
+bash# Manually download CIFAR-10
+mkdir -p data/cifar-10-batches-py
+# Download from: https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz
+# Extract to data/ directory
+Performance Optimization
+GPU Training
+bash# Check GPU availability
+nvidia-smi
+
+# Set specific GPU
+export CUDA_VISIBLE_DEVICES=0
+python quick_start.py --device cuda
+Multi-GPU Training (Not implemented in base code)
+Current implementation uses single GPU. For multi-GPU:
+
+Use torch.nn.DataParallel wrapper
+Or implement torch.nn.parallel.DistributedDataParallel
+
+Mixed Precision Training (Optional)
+pythonfrom torch.cuda.amp import autocast, GradScaler
+
+scaler = GradScaler()
+with autocast():
+    outputs = model(inputs)
+    loss = criterion(outputs, labels)
+Reproducibility
+The code includes fixed random seeds for reproducibility:
+pythontorch.manual_seed(42)
+torch.cuda.manual_seed_all(42)
+np.random.seed(42)
+torch.backends.cudnn.deterministic = True
+Note: Results may still vary slightly across different hardware/CUDA versions.
+Citation
+If you use this implementation, cite the original paper:
+bibtex@article{hybrid_attention_2024,
+  title={Integrating Hybrid Attention Mechanisms into CNNs},
+  author={Your Name et al.},
+  journal={IEEE Access},
+  year={2024}
+}
 
 
 ## License
