@@ -187,7 +187,6 @@ For questions or collaboration opportunities:
 
 ![Map_Hybrid](https://github.com/user-attachments/assets/828458d0-99f1-44da-a532-f3ba402790b1)
 
-![image](https://github.com/user-attachments/assets/bee7596d-e60b-46fa-9a3e-bc6654ce084d)
 
 ![CNN+SENet+BAM](https://github.com/user-attachments/assets/c04682c7-e44f-4e01-8c35-73384a7da6a0)
 
@@ -224,22 +223,5 @@ For questions or collaboration opportunities:
 └── README.md
 ```
 
----
 
-## 🔮 Future Work
-
-- Extend the hybrid attention modules to **larger datasets** (e.g., ImageNet, Pascal VOC).
-- Explore **lightweight designs** for mobile deployment.
-- Apply the hybrid model to **medical image analysis** and **autonomous driving** datasets.
-
----
-## 📬 Contact
-For any questions or collaborations, feel free to reach out:
-
-Email: alidormbayandjambe@gmail.com
----
-
-## 📜 License
-
-This project is released under the **MIT License**.
 
