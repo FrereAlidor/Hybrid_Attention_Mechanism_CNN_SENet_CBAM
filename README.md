@@ -185,7 +185,7 @@ Our approach outperforms previous SENet+CBAM combinations by an average of 2.32%
 
 
 
-Installation
+## Installation
 1. Clone Repository
 bashgit clone https://github.com/your-username/hybrid-attention-cnn.git
 cd hybrid-attention-cnn
@@ -290,7 +290,7 @@ Performance Optimization
 GPU Training
 bash# Check GPU availability
 nvidia-smi
-
+------------------
 # Set specific GPU
 export CUDA_VISIBLE_DEVICES=0
 python quick_start.py --device cuda
@@ -313,15 +313,7 @@ pythontorch.manual_seed(42)
 torch.cuda.manual_seed_all(42)
 np.random.seed(42)
 torch.backends.cudnn.deterministic = True
-Note: Results may still vary slightly across different hardware/CUDA versions.
-Citation
-If you use this implementation, cite the original paper:
-bibtex@article{hybrid_attention_2024,
-  title={Integrating Hybrid Attention Mechanisms into CNNs},
-  author={Your Name et al.},
-  journal={IEEE Access},
-  year={2024}
-}
+-------
 
 
 ## License
