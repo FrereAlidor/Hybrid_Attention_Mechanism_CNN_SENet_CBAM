@@ -66,7 +66,29 @@ def hybrid_attention(x):
     
     return final_output
 ```
+```
 
+---
+
+## Project Structure
+
+```
+├── train_hybrid_attention.py
+├── evaluate_model.py
+├── models/
+│   ├── resnet_hybrid.py
+│   ├── alexnet_hybrid.py
+│   ├── vgg_hybrid.py
+│   └── squeezenet_hybrid.py
+├── images/
+│   ├── 396759f1-76f3-4704-8170-209cdc5181c8.png
+│   ├── 78743aff-c320-410f-902d-5c4bb650da94.png
+│   ├── cf161bd7-b13e-4274-9c1b-c218cc8862bc.png
+│   ├── ea37b7f6-caf4-4d56-b47a-f2df2e366052.png
+│   ├── 824a5053-588d-4286-acc0-ab8d83369f84.png
+│   └── ee148012-6f21-4d80-8b3b-6b0e97d3bbb8.png
+└── README.md
+```
 ## Installation
 
 ### Requirements
@@ -142,6 +164,26 @@ All reported improvements achieve statistical significance (p < 0.001) using pai
 ### Comparative Analysis
 Our approach outperforms previous SENet+CBAM combinations by an average of 2.32% across architectures, addressing limitations in fusion strategies identified in prior work.
 
+---
+
+**Note**: This implementation focuses on systematic attention mechanism integration with rigorous experimental validation. The code prioritizes reproducibility and statistical rigor over performance optimization.
+## 🔥 Visualizations Results
+
+**The following visualizations show how the hybrid attention model better focuses on the discriminative regions compared to baseline models:**
+
+![Map_Hybrid](https://github.com/user-attachments/assets/828458d0-99f1-44da-a532-f3ba402790b1)
+
+
+![CNN+SENet+BAM](https://github.com/user-attachments/assets/c04682c7-e44f-4e01-8c35-73384a7da6a0)
+
+
+![Loss_Acc_ResNetHybrid](https://github.com/user-attachments/assets/31387409-0697-4e6d-9803-454512ef9de1)
+![Loss_Acc_AlexNetBase](https://github.com/user-attachments/assets/a34c0373-5d98-4ff0-b971-263d08e44ce0)
+![Loss_Acc_Hybrid](https://github.com/user-attachments/assets/c3f9dd59-d0c5-414d-bf77-3220cfb30744)
+
+![output6](https://github.com/user-attachments/assets/fcaf8539-4047-4b5a-b7c4-eaad2a1b06fe)
+
+
 ### Reproducibility
 - Fixed random seeds for consistent results
 - Standardized training protocol across all experiments  
@@ -175,53 +217,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Contact
 
 For questions or collaboration opportunities:
-- Email: your.email@university.edu
-- GitHub: [@your-username](https://github.com/your-username)
-
----
-
-**Note**: This implementation focuses on systematic attention mechanism integration with rigorous experimental validation. The code prioritizes reproducibility and statistical rigor over performance optimization.
-## 🔥 Visualizations Results
-
-**The following visualizations show how the hybrid attention model better focuses on the discriminative regions compared to baseline models:**
-
-![Map_Hybrid](https://github.com/user-attachments/assets/828458d0-99f1-44da-a532-f3ba402790b1)
-
-
-![CNN+SENet+BAM](https://github.com/user-attachments/assets/c04682c7-e44f-4e01-8c35-73384a7da6a0)
-
-
-![Loss_Acc_ResNetHybrid](https://github.com/user-attachments/assets/31387409-0697-4e6d-9803-454512ef9de1)
-![Loss_Acc_AlexNetBase](https://github.com/user-attachments/assets/a34c0373-5d98-4ff0-b971-263d08e44ce0)
-![Loss_Acc_Hybrid](https://github.com/user-attachments/assets/c3f9dd59-d0c5-414d-bf77-3220cfb30744)
-
-![output6](https://github.com/user-attachments/assets/fcaf8539-4047-4b5a-b7c4-eaad2a1b06fe)
-
-
-
-```
-
----
-
-## 📚 Project Structure
-
-```
-├── train_hybrid_attention.py
-├── evaluate_model.py
-├── models/
-│   ├── resnet_hybrid.py
-│   ├── alexnet_hybrid.py
-│   ├── vgg_hybrid.py
-│   └── squeezenet_hybrid.py
-├── images/
-│   ├── 396759f1-76f3-4704-8170-209cdc5181c8.png
-│   ├── 78743aff-c320-410f-902d-5c4bb650da94.png
-│   ├── cf161bd7-b13e-4274-9c1b-c218cc8862bc.png
-│   ├── ea37b7f6-caf4-4d56-b47a-f2df2e366052.png
-│   ├── 824a5053-588d-4286-acc0-ab8d83369f84.png
-│   └── ee148012-6f21-4d80-8b3b-6b0e97d3bbb8.png
-└── README.md
-```
-
+- Email: alidor.mbayandjambe@unikin.ac.cd 
 
 
